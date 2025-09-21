@@ -1,66 +1,83 @@
-<style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212; /* Dark Mode Hintergrund */
-    color: #f1f1f1;             /* Textfarbe im Dark Mode */
-  }
+/* ---- Global / Dark Theme ---- */
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #121212 !important; /* Dark background, forced */
+  color: #f1f1f1 !important;             /* Light text, forced */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;   /* Basis-Schriftgröße etwas größer */
+  line-height: 1.6;    /* bessere Lesbarkeit */
+}
 
-  #output {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    overflow-y: auto;
-  }
+/* Container */
+#output {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  overflow-y: auto;
+}
 
-  #choices {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-  }
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
 
-  button {
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #1f1f1f;
-    color: #f1f1f1;
-    border: 1px solid #444;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+/* Controls */
+button {
+  padding: 12px;
+  font-size: 1rem;     /* Buttons bleiben normal groß */
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #2a2a2a;
+}
 
-  button:hover {
-    background-color: #2a2a2a;
-  }
+input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
 
-  input {
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-    background-color: #2b2b2b;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 5px;
-  }
+/* Media */
+img {
+  display: block;
+  max-width: 300px;   /* Pferdis Kopf max. 300px breit */
+  width: 100%;        /* passt sich kleineren Bildschirmen an */
+  margin: 15px auto;  /* zentriert + Abstand */
+  border-radius: 10px;
+}
 
-  img {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  #output, #choices {
+    padding: 15px;
   }
-
-  @media (max-width: 600px) {
-    #output, #choices {
-      padding: 15px;
-    }
-
-    button, input {
-      font-size: 1.1rem;
-    }
+  button, input {
+    font-size: 1.1rem;
   }
-</style>
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Szenentexte kompakter darstellen */
+#output p {
+  margin: 0.4em 0;      /* kleinere Abstände zwischen Absätzen */
+  line-height: 1.3;     /* engerer Zeilenabstand */
+}
